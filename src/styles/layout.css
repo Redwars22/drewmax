@@ -1,0 +1,24 @@
+.horizontal-navigation {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.vertical-navigation {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.section {
+  margin: 1.5rem;
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}

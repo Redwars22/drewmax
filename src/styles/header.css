@@ -1,0 +1,22 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  width: 50%;
+  border: 2px dashed rgb(255, 62, 62);
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  position: sticky;
+  top: 5px;
+  z-index: 1000;
+  background-color: rgba(255, 62, 62, 0.801);
+}
+
+.app-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
