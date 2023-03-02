@@ -1,11 +1,16 @@
 import { movies } from "../../data/movies";
 import { ICardsSection, IMovieCard } from "../../types/types";
+import { shuffle } from "../../utils/shuffle";
 import MovieCard from "../Card/MovieCard";
 
 export default function CardsSection(props: ICardsSection) {
-  const filteredMovies: IMovieCard[] | undefined = movies.filter(
+  let filteredMovies: IMovieCard[] | undefined = movies.filter(
     (movie) => movie.id === props.id
   );
+
+  if (props.title === "Continue de onde parou") {
+    filteredMovies = shuffle(filteredMovies);
+  }
 
   return (
     <div className="section">
