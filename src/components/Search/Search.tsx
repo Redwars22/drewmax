@@ -1,10 +1,11 @@
 import "../../styles/search.css";
+import HeroButtonComponent from "../Hero/HeroButtons/HeroButton";
 
 export default function SearchComponent() {
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "row" }}>
       <input className="search-input" />
-      <button>Pesquisar</button>
+      <HeroButtonComponent title={""} action={() => {}} icon={"search"} />
     </div>
   );
 }

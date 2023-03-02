@@ -1,0 +1,17 @@
+.player {
+  background-color: rgba(0, 0, 0, 0.911);
+  width: calc(100vw - 4rem);
+  height: calc(100vh - 4rem);
+  position: absolute;
+  top: 0;
+  z-index: 100000;
+  display: none;
+  padding: 2rem !important;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.player-movie-title {
+  color: white;
+  font-size: 1.5rem;
+}

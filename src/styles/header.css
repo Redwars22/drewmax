@@ -3,7 +3,7 @@ header {
   justify-content: space-between;
   max-width: 1000px;
   width: 50%;
-  border: 2px dashed rgb(255, 62, 62);
+  border: 0.2rem dashed red;
   padding: 1rem;
   margin-left: auto;
   margin-right: auto;
@@ -12,11 +12,11 @@ header {
   position: sticky;
   top: 5px;
   z-index: 1000;
-  background-color: rgba(255, 62, 62, 0.801);
+  background-color: rgba(5, 0, 0, 0.89);
 }
 
 .app-title {
   font-size: 2rem;
   font-weight: bold;
-  color: rgb(255, 255, 255);
+  color: red;
 }

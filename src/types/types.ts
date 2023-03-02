@@ -20,3 +20,16 @@ export interface IHeroImage {
   image: string;
   synopsis: string;
 }
+
+export interface IHeroDescription {
+  title: string;
+  synopsis: string;
+}
+
+export interface IHeroButton {
+  title: string;
+  action?: () => void;
+  icon: string;
+}
+
+export type Rating = "like" | "dislike";

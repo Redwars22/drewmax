@@ -1,72 +1,5 @@
 import { IMovieCard } from "../types/types";
 
-const test = [
-  {
-    title: "Esquadrão Suicida",
-    cover:
-      "https://cinepop.com.br/wp-content/uploads/2016/07/esquadraosuicida_29.jpg",
-    synopsis:
-      "Um time dos mais perigosos e encarcerados supervilões são contratados por uma agência secreta do governo, para combater uma poderosa entidade.",
-    id: 0,
-  },
-  {
-    title: "Esquadrão Suicida",
-    cover:
-      "https://cinepop.com.br/wp-content/uploads/2016/07/esquadraosuicida_29.jpg",
-    synopsis:
-      "Um time dos mais perigosos e encarcerados supervilões são contratados por uma agência secreta do governo, para combater uma poderosa entidade.",
-    id: 0,
-  },
-  {
-    title: "Esquadrão Suicida",
-    cover:
-      "https://cinepop.com.br/wp-content/uploads/2016/07/esquadraosuicida_29.jpg",
-    synopsis:
-      "Um time dos mais perigosos e encarcerados supervilões são contratados por uma agência secreta do governo, para combater uma poderosa entidade.",
-    id: 0,
-  },
-  {
-    title: "Esquadrão Suicida",
-    cover:
-      "https://cinepop.com.br/wp-content/uploads/2016/07/esquadraosuicida_29.jpg",
-    synopsis:
-      "Um time dos mais perigosos e encarcerados supervilões são contratados por uma agência secreta do governo, para combater uma poderosa entidade.",
-    id: 0,
-  },
-  {
-    title: "Esquadrão Suicida",
-    cover:
-      "https://cinepop.com.br/wp-content/uploads/2016/07/esquadraosuicida_29.jpg",
-    synopsis:
-      "Um time dos mais perigosos e encarcerados supervilões são contratados por uma agência secreta do governo, para combater uma poderosa entidade.",
-    id: 0,
-  },
-  {
-    title: "Esquadrão Suicida",
-    cover:
-      "https://cinepop.com.br/wp-content/uploads/2016/07/esquadraosuicida_29.jpg",
-    synopsis:
-      "Um time dos mais perigosos e encarcerados supervilões são contratados por uma agência secreta do governo, para combater uma poderosa entidade.",
-    id: 0,
-  },
-  {
-    title: "Esquadrão Suicida",
-    cover:
-      "https://cinepop.com.br/wp-content/uploads/2016/07/esquadraosuicida_29.jpg",
-    synopsis:
-      "Um time dos mais perigosos e encarcerados supervilões são contratados por uma agência secreta do governo, para combater uma poderosa entidade.",
-    id: 0,
-  },
-  {
-    title: "Esquadrão Suicida",
-    cover:
-      "https://cinepop.com.br/wp-content/uploads/2016/07/esquadraosuicida_29.jpg",
-    synopsis:
-      "Um time dos mais perigosos e encarcerados supervilões são contratados por uma agência secreta do governo, para combater uma poderosa entidade.",
-    id: 0,
-  },
-];
-
 export const movies: IMovieCard[] = [
   {
     title: "Esquadrão Suicida",
@@ -117,28 +50,32 @@ export const movies: IMovieCard[] = [
   },
   {
     title: "Apenas um Show",
-    cover: "http://lexingtonvenue.com/media/poster-placeholder.jpg",
+    cover:
+      "https://comichub.blob.core.windows.net/low/c3234370-664c-4981-9997-d5e59e189e2c.jpg",
     synopsis:
       "Lorem ipsum dolor sit amet kskskskkskskskskksksksk Raissa feia ksksk",
     id: 1,
   },
   {
     title: "As Aventuras de Tadeo",
-    cover: "http://lexingtonvenue.com/media/poster-placeholder.jpg",
+    cover:
+      "https://musicart.xboxlive.com/7/e49f5000-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080",
     synopsis:
       "Lorem ipsum dolor sit amet ksk Tilpe NÃO é um fullstack! Ele é um merda!",
     id: 1,
   },
   {
     title: "Hora da Aventura",
-    cover: "http://lexingtonvenue.com/media/poster-placeholder.jpg",
+    cover:
+      "https://i.pinimg.com/originals/7a/6e/67/7a6e67fd83fae4f40dbcf2d5c7f7d45e.jpg",
     synopsis:
       "Lorem ipsum dolor sit amet ksk Tilpe NÃO é um fullstack! Ele é um merda!",
     id: 1,
   },
   {
     title: "EdensZero",
-    cover: "http://lexingtonvenue.com/media/poster-placeholder.jpg",
+    cover:
+      "https://upload.wikimedia.org/wikipedia/pt/b/b7/Edens_Zero_Volume_1_Cover.jpg",
     synopsis:
       "Lorem ipsum dolor sit amet ksk Tilpe NÃO é um fullstack! Ele é um merda!",
     id: 1,
@@ -159,22 +96,23 @@ export const movies: IMovieCard[] = [
     id: 2,
   },
   {
-    title: "",
-    cover: "http://lexingtonvenue.com/media/poster-placeholder.jpg",
+    title: "Harry Potter e a Pedra Filosofal",
+    cover: "https://m.media-amazon.com/images/I/71x1RHSaEhL.jpg",
     synopsis:
       "Lorem ipsum dolor sit amet ksk Tilpe NÃO é um fullstack! Ele é um merda!",
     id: 2,
   },
   {
-    title: "",
-    cover: "http://lexingtonvenue.com/media/poster-placeholder.jpg",
+    title: "Anne with an E",
+    cover:
+      "https://m.media-amazon.com/images/M/MV5BNThmMzJlNzgtYmY5ZC00MDllLThmZTMtNTRiMjQwNmY0NmRhXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1000_.jpg",
     synopsis:
       "Lorem ipsum dolor sit amet ksk Tilpe NÃO é um fullstack! Ele é um merda!",
     id: 2,
   },
   {
-    title: "",
-    cover: "http://lexingtonvenue.com/media/poster-placeholder.jpg",
+    title: "Thundermans",
+    cover: "https://www.justwatch.com/images/poster/177093042/s332/season-4",
     synopsis:
       "Lorem ipsum dolor sit amet ksk Tilpe NÃO é um fullstack! Ele é um merda!",
     id: 2,

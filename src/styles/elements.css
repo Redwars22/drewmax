@@ -1,0 +1,19 @@
+.default-button {
+  font-size: 1.2rem;
+  margin: 0.2rem;
+  background-color: rgba(0, 0, 0);
+  border: 0.2rem dashed red;
+  color: red;
+  padding: 0.3rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+}
+
+.default-button:hover {
+  border: 0.2rem solid red;
+  background-color: rgb(32, 32, 32);
+  transition: background-color 500ms;
+}

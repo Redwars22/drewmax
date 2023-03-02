@@ -3,3 +3,23 @@
   margin-top: -250px;
   margin-bottom: -100px;
 }
+
+.hero-description {
+  background-color: rgba(5, 0, 0, 0.795);
+  width: 50%;
+  height: 150px;
+  position: relative;
+  border-radius: 1.5rem;
+  margin-top: -235px;
+  color: white;
+  padding: 1rem 2rem 1rem 2rem;
+  margin-left: 9rem;
+}
+
+.hero-title {
+  font-size: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+}
