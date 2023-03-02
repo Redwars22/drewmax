@@ -13,6 +13,7 @@ export interface ICardsSection {
 export interface ICategories {
   title: string;
   id: number;
+  isWhereYouLeftOffSection?: boolean;
 }
 
 export interface IHeroImage {
