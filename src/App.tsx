@@ -13,6 +13,8 @@ import "react-toastify/dist/ReactToastify.css";
 import PlayerComponent from "./components/Player/Player";
 import { IPlayerContext } from "./types/player";
 import { PlayerContextProvider } from "./modules/PlayerContext";
+import SearchComponent from "./components/Search/Search";
+import SearchOverlay from "./components/Search/SearchOverlay";
 
 function App() {
   return (
@@ -30,6 +32,7 @@ function App() {
           image={hero.image}
         />
         <PlayerComponent />
+        <SearchOverlay />
         <div className="vertical-navigation">
           {categories.map((category) => (
             <CardsSection title={category.title} id={category.id} />

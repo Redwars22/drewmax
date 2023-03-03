@@ -15,3 +15,38 @@
   color: white;
   font-size: 1.5rem;
 }
+
+.player-movie-container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.player-header {
+  opacity: 0;
+}
+
+.player-header:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.534);
+  transition: opacity 500ms;
+}
+
+.controls-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 15px;
+  opacity: 0;
+}
+
+.controls-container:hover {
+  opacity: 1;
+  transition: opacity 500ms;
+}

@@ -4,6 +4,7 @@ import "../../styles/player.css";
 import { PlayerContext } from "../../modules/PlayerContext";
 import HeroButtonComponent from "../Hero/HeroButtons/HeroButton";
 import { handleRating } from "../../modules/handleRating";
+import VideoControlsComponent from "./VideoControlsComponent";
 
 export default function PlayerComponent() {
   const player = useContext(PlayerContext);
@@ -14,6 +15,7 @@ export default function PlayerComponent() {
         {player?.getState().isPlaying && (
           <div className="player">
             <div
+              className="player-header"
               style={{
                 display: "flex",
                 flexDirection: "row",
@@ -54,6 +56,21 @@ export default function PlayerComponent() {
                 />
               </div>
             </div>
+            <div>
+              <iframe
+                className="player-movie-container"
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/"
+                title="YouTube video player"
+                style={{ border: "none" }}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
+            <div className="video-controls">
+              <VideoControlsComponent />
+            </div>
           </div>
         )}
       </>
@@ -62,3 +79,5 @@ export default function PlayerComponent() {
 
   return <>{renderPlayerArea()}</>;
 }
+
+//uLtkt8BonwM?start=4757
