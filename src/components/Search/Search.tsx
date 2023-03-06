@@ -1,15 +1,16 @@
+import { useHistory } from "react-router-dom";
 import "../../styles/search.css";
 import HeroButtonComponent from "../Hero/HeroButtons/HeroButton";
 
-export default function SearchComponent() {
+export default function SearchButton() {
+  const history = useHistory();
+
   return (
     <div style={{ display: "flex", flexDirection: "row" }}>
       <HeroButtonComponent
         title={""}
         action={() => {
-          (
-            document.querySelector(".search-overlay") as HTMLDivElement
-          ).style.display = "flex";
+          history.push("/search");
         }}
         icon={"search"}
       />

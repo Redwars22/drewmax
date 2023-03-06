@@ -13,10 +13,10 @@ import "react-toastify/dist/ReactToastify.css";
 import PlayerComponent from "./components/Player/Player";
 import { IPlayerContext } from "./types/player";
 import { PlayerContextProvider } from "./modules/PlayerContext";
-import SearchComponent from "./components/Search/Search";
-import SearchOverlay from "./components/Search/SearchOverlay";
+import SearchComponent from "./components/Search/SearchComponent";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import AndrewFade from "./andrewnimate/Fade";
 
 function App() {
   return (
@@ -27,27 +27,56 @@ function App() {
           position={"bottom-right"}
           style={{ zIndex: 10000000 }}
         />
-        <HeaderComponent />
         <BrowserRouter>
+          <HeaderComponent />
           <Switch>
             <Route exact path="/">
-              <>
+              <AndrewFade
+                props={{
+                  increment: 0.1,
+                  initialOpacity: 0,
+                  targetOpacity: 1,
+                  interval: 50,
+                  type: "fadein",
+                }}
+              >
                 <HeroComponent
                   title={hero.title}
                   synopsis={hero.synopsis}
                   image={hero.image}
                 />
-
-                <SearchOverlay />
                 <div className="vertical-navigation">
                   {categories.map((category) => (
                     <CardsSection title={category.title} id={category.id} />
                   ))}
                 </div>
-              </>
+              </AndrewFade>
             </Route>
             <Route path="/watch">
-              <PlayerComponent />
+              <AndrewFade
+                props={{
+                  increment: 0.1,
+                  initialOpacity: 0,
+                  targetOpacity: 1,
+                  interval: 50,
+                  type: "fadein",
+                }}
+              >
+                <PlayerComponent />
+              </AndrewFade>
+            </Route>
+            <Route path="/search">
+              <AndrewFade
+                props={{
+                  increment: 0.1,
+                  initialOpacity: 0,
+                  targetOpacity: 1,
+                  interval: 50,
+                  type: "fadein",
+                }}
+              >
+                <SearchComponent />
+              </AndrewFade>
             </Route>
           </Switch>
         </BrowserRouter>

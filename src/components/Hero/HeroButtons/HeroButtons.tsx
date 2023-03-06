@@ -9,6 +9,7 @@ import { useHistory } from "react-router-dom";
 export default function HeroButtonsComponent() {
   const [movieAddedToList, setMovieAddedToList] = useState<boolean>(false);
   const player = useContext(PlayerContext);
+  const history = useHistory();
 
   const AddMovieToList = useCallback(
     () => (
@@ -53,7 +54,7 @@ export default function HeroButtonsComponent() {
                 uuid: "0",
               },
             });
-            useHistory.push("/watch");
+            history.push("/watch");
           }}
         />
         <HeroButtonComponent
