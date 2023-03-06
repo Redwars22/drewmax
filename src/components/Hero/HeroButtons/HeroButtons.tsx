@@ -3,8 +3,8 @@ import HeroButtonComponent from "./HeroButton";
 import { useCallback, useContext, useState } from "react";
 import { PlayerContext } from "../../../modules/PlayerContext";
 import { hero } from "../../../data/hero";
-import { handleShowPlayer } from "../../../modules/showPlayer";
 import { handleRating } from "../../../modules/handleRating";
+import { useHistory } from "react-router-dom";
 
 export default function HeroButtonsComponent() {
   const [movieAddedToList, setMovieAddedToList] = useState<boolean>(false);
@@ -53,7 +53,7 @@ export default function HeroButtonsComponent() {
                 uuid: "0",
               },
             });
-            if (player?.getState().isPlaying) handleShowPlayer();
+            useHistory.push("/watch");
           }}
         />
         <HeroButtonComponent

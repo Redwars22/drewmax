@@ -5,10 +5,7 @@
   position: absolute;
   top: 0;
   z-index: 100000;
-  display: none;
   padding: 2rem !important;
-  /* justify-content: center;
-  align-items: center; */
 }
 
 .player-movie-title {

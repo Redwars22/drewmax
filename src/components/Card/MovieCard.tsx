@@ -2,10 +2,11 @@ import { url } from "inspector";
 import { IMovieCard } from "../../types/types";
 import { useContext } from "react";
 import { PlayerContext } from "../../modules/PlayerContext";
-import { handleShowPlayer } from "../../modules/showPlayer";
+import { useHistory } from "react-router-dom";
 
 export default function MovieCard(props: IMovieCard) {
   const player = useContext(PlayerContext);
+  const history = useHistory();
 
   return (
     <div
@@ -18,7 +19,7 @@ export default function MovieCard(props: IMovieCard) {
             uuid: "0",
           },
         });
-        if (player?.getState().isPlaying) handleShowPlayer();
+        history.push("/watch");
       }}
     >
       <img

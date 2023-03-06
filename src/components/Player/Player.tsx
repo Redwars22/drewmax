@@ -1,13 +1,14 @@
 import { useCallback, useContext } from "react";
-import { handleClosePlayer } from "../../modules/showPlayer";
 import "../../styles/player.css";
 import { PlayerContext } from "../../modules/PlayerContext";
 import HeroButtonComponent from "../Hero/HeroButtons/HeroButton";
 import { handleRating } from "../../modules/handleRating";
 import VideoControlsComponent from "./VideoControlsComponent";
+import { useHistory } from "react-router-dom";
 
 export default function PlayerComponent() {
   const player = useContext(PlayerContext);
+  const history = useHistory();
 
   const renderPlayerArea = useCallback(() => {
     return (
@@ -37,7 +38,7 @@ export default function PlayerComponent() {
                 <HeroButtonComponent
                   title=""
                   icon="arrow-return-left"
-                  action={() => handleClosePlayer()}
+                  action={() => history.push("/")}
                 />
                 <span className="player-movie-title">
                   {player?.getState().movie.title}

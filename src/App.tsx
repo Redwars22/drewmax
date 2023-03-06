@@ -15,29 +15,42 @@ import { IPlayerContext } from "./types/player";
 import { PlayerContextProvider } from "./modules/PlayerContext";
 import SearchComponent from "./components/Search/Search";
 import SearchOverlay from "./components/Search/SearchOverlay";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <ToastContainer
-        theme={"dark"}
-        position={"bottom-right"}
-        style={{ zIndex: 10000000 }}
-      />
       <PlayerContextProvider value={null}>
-        <HeaderComponent />
-        <HeroComponent
-          title={hero.title}
-          synopsis={hero.synopsis}
-          image={hero.image}
+        <ToastContainer
+          theme={"dark"}
+          position={"bottom-right"}
+          style={{ zIndex: 10000000 }}
         />
-        <PlayerComponent />
-        <SearchOverlay />
-        <div className="vertical-navigation">
-          {categories.map((category) => (
-            <CardsSection title={category.title} id={category.id} />
-          ))}
-        </div>
+        <HeaderComponent />
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/">
+              <>
+                <HeroComponent
+                  title={hero.title}
+                  synopsis={hero.synopsis}
+                  image={hero.image}
+                />
+
+                <SearchOverlay />
+                <div className="vertical-navigation">
+                  {categories.map((category) => (
+                    <CardsSection title={category.title} id={category.id} />
+                  ))}
+                </div>
+              </>
+            </Route>
+            <Route path="/watch">
+              <PlayerComponent />
+            </Route>
+          </Switch>
+        </BrowserRouter>
       </PlayerContextProvider>
     </div>
   );
