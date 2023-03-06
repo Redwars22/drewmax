@@ -17,6 +17,8 @@ import SearchComponent from "./components/Search/SearchComponent";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import AndrewFade from "./andrewnimate/Fade";
+import Page404 from "./components/Error/404";
+import { MoviesCatalogue } from "./modules/renderMovies";
 
 function App() {
   return (
@@ -40,16 +42,15 @@ function App() {
                   type: "fadein",
                 }}
               >
-                <HeroComponent
-                  title={hero.title}
-                  synopsis={hero.synopsis}
-                  image={hero.image}
-                />
-                <div className="vertical-navigation">
-                  {categories.map((category) => (
-                    <CardsSection title={category.title} id={category.id} />
-                  ))}
-                </div>
+                <>
+                  <HeroComponent
+                    title={hero.title}
+                    synopsis={hero.synopsis}
+                    image={hero.image}
+                  />
+
+                  {MoviesCatalogue()}
+                </>
               </AndrewFade>
             </Route>
             <Route path="/watch">
@@ -76,6 +77,19 @@ function App() {
                 }}
               >
                 <SearchComponent />
+              </AndrewFade>
+            </Route>
+            <Route path="*">
+              <AndrewFade
+                props={{
+                  increment: 0.1,
+                  initialOpacity: 0,
+                  targetOpacity: 1,
+                  interval: 50,
+                  type: "fadein",
+                }}
+              >
+                <Page404 />
               </AndrewFade>
             </Route>
           </Switch>

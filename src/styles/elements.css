@@ -17,3 +17,13 @@
   background-color: rgb(32, 32, 32);
   transition: background-color 500ms;
 }
+
+.movie-catalog {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 2rem;
+  margin-left: px;
+}
