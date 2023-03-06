@@ -29,7 +29,13 @@ export default function MovieCard(props: IMovieCard) {
       ></img>
       <div className="movie-info-container">
         <span className="movie-title">{props.title}</span>
-        <p className="movie-synopsis">{props.synopsis}</p>
+        <p className="movie-synopsis">
+          {props.synopsis !== "" || props.synopsis !== undefined
+            ? props?.synopsis?.length! > 100
+              ? props.synopsis!.substring(0, 100) + "..."
+              : props.synopsis
+            : "Sentimos muito, mas não foi fornecida uma sinopse para este filme."}
+        </p>
       </div>
     </div>
   );

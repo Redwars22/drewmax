@@ -19,6 +19,9 @@ import { useLocation } from "react-router-dom";
 import AndrewFade from "./andrewnimate/Fade";
 import Page404 from "./components/Error/404";
 import { MoviesCatalogue } from "./modules/renderMovies";
+import DefaultError from "./components/Error/DefaultError";
+import UserComponent from "./components/User/User";
+import NavigationComponent from "./routes/routes";
 
 function App() {
   return (
@@ -29,71 +32,7 @@ function App() {
           position={"bottom-right"}
           style={{ zIndex: 10000000 }}
         />
-        <BrowserRouter>
-          <HeaderComponent />
-          <Switch>
-            <Route exact path="/">
-              <AndrewFade
-                props={{
-                  increment: 0.1,
-                  initialOpacity: 0,
-                  targetOpacity: 1,
-                  interval: 50,
-                  type: "fadein",
-                }}
-              >
-                <>
-                  <HeroComponent
-                    title={hero.title}
-                    synopsis={hero.synopsis}
-                    image={hero.image}
-                  />
-
-                  {MoviesCatalogue()}
-                </>
-              </AndrewFade>
-            </Route>
-            <Route path="/watch">
-              <AndrewFade
-                props={{
-                  increment: 0.1,
-                  initialOpacity: 0,
-                  targetOpacity: 1,
-                  interval: 50,
-                  type: "fadein",
-                }}
-              >
-                <PlayerComponent />
-              </AndrewFade>
-            </Route>
-            <Route path="/search">
-              <AndrewFade
-                props={{
-                  increment: 0.1,
-                  initialOpacity: 0,
-                  targetOpacity: 1,
-                  interval: 50,
-                  type: "fadein",
-                }}
-              >
-                <SearchComponent />
-              </AndrewFade>
-            </Route>
-            <Route path="*">
-              <AndrewFade
-                props={{
-                  increment: 0.1,
-                  initialOpacity: 0,
-                  targetOpacity: 1,
-                  interval: 50,
-                  type: "fadein",
-                }}
-              >
-                <Page404 />
-              </AndrewFade>
-            </Route>
-          </Switch>
-        </BrowserRouter>
+        <NavigationComponent />
       </PlayerContextProvider>
     </div>
   );

@@ -19,11 +19,11 @@
 }
 
 .movie-catalog {
-  display: flex;
-  flex-direction: row;
+  display: grid;
   max-width: 100%;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  grid-template-columns: repeat(auto-fit, 191px);
+  gap: 1rem;
+  grid-auto-flow: row;
   margin-top: 2rem;
-  margin-left: px;
+  margin-left: 5%;
 }

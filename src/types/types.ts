@@ -1,7 +1,9 @@
 export interface IMovieCard {
+  poster_path?: string;
+  overview?: string | undefined;
   title: string;
   cover: string;
-  synopsis: string;
+  synopsis: string | undefined;
   id: number;
 }
 

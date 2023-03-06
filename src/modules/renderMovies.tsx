@@ -3,6 +3,7 @@ import MovieCard from "../components/Card/MovieCard";
 import { getPopularMovies } from "./api";
 import "../styles/elements.css";
 import { config } from "./config";
+import { shuffle } from "../utils/shuffle";
 
 export const MoviesCatalogue = () => {
   const [movies, setMovies] = useState([]);

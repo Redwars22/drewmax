@@ -5,21 +5,20 @@ import { movies } from "../../data/movies";
 import MovieCard from "../Card/MovieCard";
 import { IMovieCard } from "../../types/types";
 import NotFound from "../Error/NotFound";
+import { getMoviesFromQuery } from "../../modules/api";
+import { config } from "../../modules/config";
 
 export default function SearchComponent() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([] as IMovieCard[] | null | undefined);
 
   useEffect(() => {
-    let results: IMovieCard[] | null | undefined;
-
-    setResults(
-      query !== ""
-        ? movies.filter((movie) =>
-            movie.title.toLowerCase().includes(query.toLowerCase())
-          )
-        : null
-    );
+    let data = [];
+    async function getResults() {
+      data = await getMoviesFromQuery(query);
+      setResults(data);
+    }
+    getResults();
   }, [query]);
 
   return (
@@ -39,8 +38,8 @@ export default function SearchComponent() {
             {results?.map((result) => (
               <MovieCard
                 title={result.title}
-                cover={result.cover}
-                synopsis={result.synopsis}
+                cover={`${config.image_base_url + result.poster_path}`}
+                synopsis={result.overview}
                 id={result.id}
               />
             ))}

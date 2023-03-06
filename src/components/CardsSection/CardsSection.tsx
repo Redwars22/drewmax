@@ -32,8 +32,8 @@ export default function CardsSection(props: ICardsSection) {
                   title={item.title}
                   cover={item.cover}
                   synopsis={
-                    item.synopsis.length > 142
-                      ? item.synopsis.substring(0, 142) + "..."
+                    item.synopsis!.length > 142
+                      ? item.synopsis!.substring(0, 142) + "..."
                       : item.synopsis
                   }
                   id={0}
