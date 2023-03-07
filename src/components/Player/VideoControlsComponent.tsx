@@ -1,11 +1,19 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import HeroButtonComponent from "../Hero/HeroButtons/HeroButton";
 import { toast } from "react-toastify";
+import {
+  fetchFavorites,
+  handleAddToFavorites,
+} from "../../modules/handleFavorites";
+import { PlayerContext } from "../../modules/PlayerContext";
+import { IFavorite } from "../../types/types";
 
 export default function VideoControlsComponent() {
   const [isPlaying, setIsPlaying] = useState(true);
   const [videoProgress, setVideoProgress] = useState(0);
   const [timeStamp, setTimeStamp] = useState("00:00");
+  const player = useContext(PlayerContext);
+  const [isAlreadyInTheFavsList, setIsAlreadyInTheFavsList] = useState(false);
 
   useEffect(() => {
     if (isPlaying)
@@ -66,11 +74,13 @@ export default function VideoControlsComponent() {
         />
         <HeroButtonComponent
           title={""}
-          icon={"plus"}
+          icon={"heart"}
           action={() =>
-            toast(
-              "Não foi possível adicionar à lista, porque ainda nem tem lista :P"
-            )
+            handleAddToFavorites({
+              title: player?.getState().movie.title,
+              cover: player?.getState().movie.data?.cover,
+              synopsis: player?.getState().movie.data?.synopsis,
+            })
           }
         />
       </div>

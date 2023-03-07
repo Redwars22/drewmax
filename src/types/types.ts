@@ -36,3 +36,9 @@ export interface IHeroButton {
 }
 
 export type Rating = "like" | "dislike";
+
+export type IFavorite = {
+  title: string | undefined;
+  synopsis: string | undefined;
+  cover: string | undefined;
+};

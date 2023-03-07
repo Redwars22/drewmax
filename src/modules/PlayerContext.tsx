@@ -31,6 +31,10 @@ const PlayerContextProvider = ({
       movie: {
         title: values.movie.title,
         uuid: "",
+        data: {
+          synopsis: values.movie.data?.synopsis!,
+          cover: values.movie.data?.cover!,
+        },
       },
     }));
   };

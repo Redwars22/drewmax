@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { UserData } from "../../types/user";
-import { fetchFavorites } from "../../modules/handleFavorites";
+import {
+  fetchFavorites,
+  handleAddToFavorites,
+  handleRemoveAllFavorites,
+} from "../../modules/handleFavorites";
 import MovieCard from "../Card/MovieCard";
 import HeroButtonComponent from "../Hero/HeroButtons/HeroButton";
 
@@ -58,6 +62,16 @@ export default function UserComponent() {
               </span>
             )}
           </div>
+          {fetchFavorites().length > 0 && (
+            <HeroButtonComponent
+              title={"Remover Todos os Favoritos"}
+              icon={"trash-fill"}
+              action={() => {
+                handleRemoveAllFavorites();
+                window.location.reload();
+              }}
+            />
+          )}
         </section>
         <section>
           <h1>Editar usuário</h1>

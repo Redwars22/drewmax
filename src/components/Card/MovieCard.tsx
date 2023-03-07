@@ -17,6 +17,10 @@ export default function MovieCard(props: IMovieCard) {
           movie: {
             title: props.title,
             uuid: "0",
+            data: {
+              synopsis: props.synopsis,
+              cover: props.cover,
+            },
           },
         });
         history.push("/watch");

@@ -3,5 +3,9 @@ export interface IPlayerContext {
   movie: {
     title: string;
     uuid: string;
+    data?: {
+      synopsis: string | undefined;
+      cover: string;
+    };
   };
 }
