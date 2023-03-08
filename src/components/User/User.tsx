@@ -7,10 +7,15 @@ import {
 } from "../../modules/handleFavorites";
 import MovieCard from "../Card/MovieCard";
 import HeroButtonComponent from "../Hero/HeroButtons/HeroButton";
+import { useUserStore } from "../../store/UserStore";
+import { plans } from "../../data/plans";
+import currency from "currency.js";
 
 export default function UserComponent() {
   const [favorites, setFavorites] = useState([]);
   const [userDataEdit, setUserDataEdit] = useState("");
+
+  const store = useUserStore((s: any) => s.userData);
 
   const user: UserData = {
     name: "Andrew Lockswolff",
@@ -24,6 +29,8 @@ export default function UserComponent() {
 
   console.log(favorites);
 
+  //!Transformar em componentes menores
+
   return (
     <div className="user-area" style={{ color: "red" }}>
       <section
@@ -34,7 +41,17 @@ export default function UserComponent() {
           padding: "1rem",
         }}
       >
-        <h1>{user.name}</h1>
+        <img
+          src={store.avatar}
+          alt="avatar do usuário"
+          style={{
+            width: "150px",
+            height: "150px",
+            borderRadius: "50%",
+            border: "2px dashed red",
+          }}
+        />
+        <h1>{store.name}</h1>
       </section>
       <section
         style={{
@@ -85,12 +102,57 @@ export default function UserComponent() {
             title={"Salvar alterações"}
             icon={"save"}
             action={() => {
-              user.name = userDataEdit;
+              useUserStore.setState((s: any) => ({
+                ...s,
+                userData: {
+                  name: userDataEdit,
+                },
+              }));
             }}
           />
         </section>
         <section>
           <h1>Sua assinatura</h1>
+          Plano: Data de cobrança: Status: Alterar forma de pagamento: Trocar de
+          plano
+          <div style={{ display: "flex", flexDirection: "row" }}>
+            {plans.map((plan) => (
+              <div
+                style={{
+                  color: "red",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <span style={{ fontSize: "2rem" }}>{`R$ ${currency(
+                  plan.price
+                )}`}</span>
+                <span>{plan.name}</span>
+                <ol>
+                  {plan.description.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ol>
+              </div>
+            ))}
+          </div>
+          <div style={{ display: "flex", flexDirection: "row" }}>
+            <HeroButtonComponent
+              title={"Alterar Forma de Pagamento"}
+              icon={"credit-card"}
+              action={() => {
+                user.name = userDataEdit;
+              }}
+            />
+            <HeroButtonComponent
+              title={"Trocar de Plano"}
+              icon={"toggles"}
+              action={() => {
+                user.name = userDataEdit;
+              }}
+            />
+          </div>
         </section>
 
         <section></section>
