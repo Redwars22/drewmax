@@ -4,18 +4,27 @@ import { getPopularMovies } from "./api";
 import "../styles/elements.css";
 import { config } from "./config";
 import { shuffle } from "../utils/shuffle";
+import { useQuery } from "react-query";
+import { useHistory } from "react-router-dom";
 
 export const MoviesCatalogue = () => {
   const [movies, setMovies] = useState([]);
+  const history = useHistory();
 
-  useEffect(() => {
-    const getMovies = async () => {
-      const res = await getPopularMovies();
+  async function fetchMovies() {
+    const res = await getPopularMovies();
+    setMovies(res);
+  }
 
-      setMovies(res);
-    };
-    getMovies();
-  }, []);
+  const { data, status } = useQuery("movies", fetchMovies);
+
+  // if (status === "loading") {
+  //   return <h1 style={{ color: "red" }}>Carregando...</h1>;
+  // }
+
+  if (status === "error") {
+    history.push("/error");
+  }
 
   return (
     <div className="movie-catalog">

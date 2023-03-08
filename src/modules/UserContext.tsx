@@ -1,7 +1,24 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
-const UserContext = createContext<null>(null);
+const UserContext = createContext({
+  isLogged: false,
+  isActive: false,
+});
 
-const UserContextProvider = () => {};
+const UserContextProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+  value: null;
+}) => {
+  const [isLogged, setIsLogged] = useState(false);
+  const isActive = false;
 
-export default { UserContext, UserContextProvider };
+  const values = {
+    isLogged,
+    isActive,
+  };
+  return <UserContext.Provider value={values}>{children}</UserContext.Provider>;
+};
+
+export { UserContext, UserContextProvider };

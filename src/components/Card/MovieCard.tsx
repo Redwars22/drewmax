@@ -3,27 +3,36 @@ import { IMovieCard } from "../../types/types";
 import { useContext } from "react";
 import { PlayerContext } from "../../modules/PlayerContext";
 import { useHistory } from "react-router-dom";
+import { UserContext } from "../../modules/UserContext";
+import { toast } from "react-toastify";
 
 export default function MovieCard(props: IMovieCard) {
   const player = useContext(PlayerContext);
+  const user = useContext(UserContext);
   const history = useHistory();
 
   return (
     <div
       className="card"
       onClick={() => {
-        player?.setPlayerProps({
-          isPlaying: true,
-          movie: {
-            title: props.title,
-            uuid: "0",
-            data: {
-              synopsis: props.synopsis,
-              cover: props.cover,
+        if (user.isActive) {
+          player?.setPlayerProps({
+            isPlaying: true,
+            movie: {
+              title: props.title,
+              uuid: "0",
+              data: {
+                synopsis: props.synopsis,
+                cover: props.cover,
+              },
             },
-          },
-        });
-        history.push("/watch");
+          });
+          history.push("/watch");
+        } else {
+          toast(
+            "Você precisa ser um assinante para assistir a algum título. Junte-se ao Drewflix, o preço é acessível!"
+          );
+        }
       }}
     >
       <img
