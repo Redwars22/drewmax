@@ -6,6 +6,7 @@
   color: red;
   width: 50%;
   margin-bottom: 3rem;
+  outline: none;
 }
 
 .search-overlay {

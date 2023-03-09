@@ -9,6 +9,8 @@ import SearchComponent from "../components/Search/SearchComponent";
 import UserComponent from "../components/User/User";
 import { hero } from "../data/hero";
 import { MoviesCatalogue } from "../modules/renderMovies";
+import LoginComponent from "../components/User/Login";
+import LoginError from "../components/Error/LoginError";
 
 export default function NavigationComponent() {
   return (
@@ -31,9 +33,21 @@ export default function NavigationComponent() {
                 synopsis={hero.synopsis}
                 image={hero.image}
               />
-
               {MoviesCatalogue()}
             </>
+          </AndrewFade>
+        </Route>
+        <Route path="/login">
+          <AndrewFade
+            props={{
+              increment: 0.1,
+              initialOpacity: 0,
+              targetOpacity: 1,
+              interval: 50,
+              type: "fadein",
+            }}
+          >
+            <LoginComponent />
           </AndrewFade>
         </Route>
         <Route path="/watch">
@@ -86,6 +100,19 @@ export default function NavigationComponent() {
             }}
           >
             <UserComponent />
+          </AndrewFade>
+        </Route>
+        <Route path="/login-error">
+          <AndrewFade
+            props={{
+              increment: 0.1,
+              initialOpacity: 0,
+              targetOpacity: 1,
+              interval: 50,
+              type: "fadein",
+            }}
+          >
+            <LoginError />
           </AndrewFade>
         </Route>
         <Route path="*">

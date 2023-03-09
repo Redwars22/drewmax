@@ -27,3 +27,13 @@
   margin-top: 2rem;
   margin-left: 5%;
 }
+
+.default-input {
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: 2px solid red;
+  color: red;
+  margin-bottom: 3rem;
+  outline: none;
+}

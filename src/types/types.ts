@@ -42,3 +42,5 @@ export type IFavorite = {
   synopsis: string | undefined;
   cover: string | undefined;
 };
+
+export type IValidation = "success" | "error";

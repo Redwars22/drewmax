@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserData } from "../../types/user";
 import {
   fetchFavorites,
@@ -10,10 +10,14 @@ import HeroButtonComponent from "../Hero/HeroButtons/HeroButton";
 import { useUserStore } from "../../store/UserStore";
 import { plans } from "../../data/plans";
 import currency from "currency.js";
+import { UserContext } from "../../modules/UserContext";
+import { useHistory } from "react-router-dom";
 
 export default function UserComponent() {
   const [favorites, setFavorites] = useState([]);
   const [userDataEdit, setUserDataEdit] = useState("");
+  const userCtx = useContext(UserContext);
+  const history = useHistory();
 
   const store = useUserStore((s: any) => s.userData);
 
@@ -52,6 +56,14 @@ export default function UserComponent() {
           }}
         />
         <h1>{store.name}</h1>
+        <HeroButtonComponent
+          title={"Sair"}
+          icon={"box-arrow-left"}
+          action={() => {
+            userCtx.logout();
+            history.push("/login");
+          }}
+        />
       </section>
       <section
         style={{
@@ -92,12 +104,30 @@ export default function UserComponent() {
         </section>
         <section>
           <h1>Editar usuário</h1>
-          <label htmlFor="">Nome: </label>
-          <input
-            type="text"
-            className="dm-input"
-            onChange={(e) => setUserDataEdit(e.target.value)}
-          />
+          <div>
+            <label htmlFor="">Nome: </label>
+            <input
+              type="text"
+              className="default-input"
+              onChange={(e) => setUserDataEdit(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="">E-mail: </label>
+            <input
+              type="text"
+              className="default-input"
+              onChange={(e) => setUserDataEdit(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="">Nome: </label>
+            <input
+              type="text"
+              className="default-input"
+              onChange={(e) => setUserDataEdit(e.target.value)}
+            />
+          </div>
           <HeroButtonComponent
             title={"Salvar alterações"}
             icon={"save"}
