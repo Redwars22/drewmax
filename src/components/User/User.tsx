@@ -23,6 +23,12 @@ export default function UserComponent() {
 
   const user: UserData = {
     name: "Andrew Lockswolff",
+    avatar: "",
+    payment: {
+      currentPlanID: "1",
+      billingDay: 0,
+      isActive: false,
+    },
   };
 
   useEffect(() => {
@@ -32,6 +38,19 @@ export default function UserComponent() {
   }, []);
 
   console.log(favorites);
+
+  const getPlanByID = (plan: string) => {
+    switch (plan) {
+      case "1":
+        return "básico";
+      case "2":
+        return "família";
+      case "3":
+        return "premium";
+      default:
+        return "inválido";
+    }
+  };
 
   //!Transformar em componentes menores
 
@@ -121,7 +140,7 @@ export default function UserComponent() {
             />
           </div>
           <div>
-            <label htmlFor="">Nome: </label>
+            <label htmlFor="">Avatar: </label>
             <input
               type="text"
               className="default-input"
@@ -143,9 +162,23 @@ export default function UserComponent() {
         </section>
         <section>
           <h1>Sua assinatura</h1>
-          Plano: Data de cobrança: Status: Alterar forma de pagamento: Trocar de
-          plano
-          <div style={{ display: "flex", flexDirection: "row" }}>
+          <ul>
+            <li>
+              <strong>Plano Atual: </strong>{" "}
+              {getPlanByID(store.payment.currentPlanID)}
+            </li>
+            <li>
+              <strong>Data de Cobrança: </strong> {store.payment.billingDay}{" "}
+            </li>
+            <li>
+              <strong>Status: </strong>{" "}
+              {store.payment.isActive ? "ativo" : "pendente"}
+            </li>
+          </ul>
+          <div
+            className="plans-grid"
+            // style={{ display: "flex", flexDirection: "row" }}
+          >
             {plans.map((plan) => (
               <div
                 style={{
