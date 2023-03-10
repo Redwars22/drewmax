@@ -1,21 +1,25 @@
 import { useContext, useEffect, useState } from "react";
-import { UserData } from "../../types/user";
+import { UserData } from "../../../types/user";
 import {
   fetchFavorites,
   handleAddToFavorites,
   handleRemoveAllFavorites,
-} from "../../modules/handleFavorites";
-import MovieCard from "../Card/MovieCard";
-import HeroButtonComponent from "../Hero/HeroButtons/HeroButton";
-import { useUserStore } from "../../store/UserStore";
-import { plans } from "../../data/plans";
+} from "../../../modules/handleFavorites";
+import MovieCard from "../../Card/MovieCard";
+import HeroButtonComponent from "../../Hero/HeroButtons/HeroButton";
+import { useUserStore } from "../../../store/UserStore";
+import { plans } from "../../../data/plans";
 import currency from "currency.js";
-import { UserContext } from "../../modules/UserContext";
+import { UserContext } from "../../../modules/UserContext";
 import { useHistory } from "react-router-dom";
 
 export default function UserComponent() {
   const [favorites, setFavorites] = useState([]);
-  const [userDataEdit, setUserDataEdit] = useState("");
+  const [userDataEdit, setUserDataEdit] = useState({
+    name: "",
+    email: "",
+    avatar: "",
+  });
   const userCtx = useContext(UserContext);
   const history = useHistory();
 
@@ -65,7 +69,7 @@ export default function UserComponent() {
         }}
       >
         <img
-          src={store.avatar}
+          src={useUserStore.getState().avatar}
           alt="avatar do usuário"
           style={{
             width: "150px",
@@ -74,7 +78,7 @@ export default function UserComponent() {
             border: "2px dashed red",
           }}
         />
-        <h1>{store.name}</h1>
+        <h1>{useUserStore.getState().name}</h1>
         <HeroButtonComponent
           title={"Sair"}
           icon={"box-arrow-left"}
@@ -128,7 +132,12 @@ export default function UserComponent() {
             <input
               type="text"
               className="default-input"
-              onChange={(e) => setUserDataEdit(e.target.value)}
+              onChange={(e) =>
+                setUserDataEdit((s) => ({
+                  ...s,
+                  name: e.target.value === "" ? s.name : e.target.value,
+                }))
+              }
             />
           </div>
           <div>
@@ -136,7 +145,12 @@ export default function UserComponent() {
             <input
               type="text"
               className="default-input"
-              onChange={(e) => setUserDataEdit(e.target.value)}
+              onChange={(e) =>
+                setUserDataEdit((s) => ({
+                  ...s,
+                  email: e.target.value === "" ? s.email : e.target.value,
+                }))
+              }
             />
           </div>
           <div>
@@ -144,7 +158,12 @@ export default function UserComponent() {
             <input
               type="text"
               className="default-input"
-              onChange={(e) => setUserDataEdit(e.target.value)}
+              onChange={(e) => {
+                setUserDataEdit((s) => ({
+                  ...s,
+                  avatar: e.target.value === "" ? s.avatar : e.target.value,
+                }));
+              }}
             />
           </div>
           <HeroButtonComponent
@@ -153,10 +172,12 @@ export default function UserComponent() {
             action={() => {
               useUserStore.setState((s: any) => ({
                 ...s,
-                userData: {
-                  name: userDataEdit,
-                },
+                name: userDataEdit.name !== "" ? userDataEdit.name : s.name,
+                avatar:
+                  userDataEdit.avatar !== "" ? userDataEdit.avatar : s.avatar,
+                email: userDataEdit.email !== "" ? userDataEdit.email : s.email,
               }));
+              window.location.reload();
             }}
           />
         </section>
@@ -165,14 +186,14 @@ export default function UserComponent() {
           <ul>
             <li>
               <strong>Plano Atual: </strong>{" "}
-              {getPlanByID(store.payment.currentPlanID)}
+              {getPlanByID(store?.payment.currentPlanID)}
             </li>
             <li>
-              <strong>Data de Cobrança: </strong> {store.payment.billingDay}{" "}
+              <strong>Data de Cobrança: </strong> {store?.payment.billingDay}{" "}
             </li>
             <li>
               <strong>Status: </strong>{" "}
-              {store.payment.isActive ? "ativo" : "pendente"}
+              {store?.payment.isActive ? "ativo" : "pendente"}
             </li>
           </ul>
           <div
@@ -204,16 +225,12 @@ export default function UserComponent() {
             <HeroButtonComponent
               title={"Alterar Forma de Pagamento"}
               icon={"credit-card"}
-              action={() => {
-                user.name = userDataEdit;
-              }}
+              action={() => {}}
             />
             <HeroButtonComponent
               title={"Trocar de Plano"}
               icon={"toggles"}
-              action={() => {
-                user.name = userDataEdit;
-              }}
+              action={() => {}}
             />
           </div>
         </section>

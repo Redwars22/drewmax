@@ -6,10 +6,10 @@ import HeaderComponent from "../components/Header/Header";
 import HeroComponent from "../components/Hero/Hero";
 import PlayerComponent from "../components/Player/Player";
 import SearchComponent from "../components/Search/SearchComponent";
-import UserComponent from "../components/User/User";
+import UserComponent from "../components/User/screen/User";
 import { hero } from "../data/hero";
 import { MoviesCatalogue } from "../modules/renderMovies";
-import LoginComponent from "../components/User/Login";
+import LoginComponent from "../components/User/screen/Login";
 import LoginError from "../components/Error/LoginError";
 
 export default function NavigationComponent() {

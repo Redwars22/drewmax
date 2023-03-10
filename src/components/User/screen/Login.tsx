@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
-import HeroButtonComponent from "../Hero/HeroButtons/HeroButton";
-import { UserContext } from "../../modules/UserContext";
+import HeroButtonComponent from "../../Hero/HeroButtons/HeroButton";
+import { UserContext } from "../../../modules/UserContext";
 import { useHistory } from "react-router-dom";
 
 export default function LoginComponent() {
