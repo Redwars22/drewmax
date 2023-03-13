@@ -33,6 +33,7 @@ export interface IHeroButton {
   title: string;
   action?: () => void;
   icon: string;
+  hint?: string;
 }
 
 export type Rating = "like" | "dislike";

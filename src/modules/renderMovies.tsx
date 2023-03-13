@@ -6,13 +6,16 @@ import { config } from "./config";
 import { shuffle } from "../utils/shuffle";
 import { useQuery } from "react-query";
 import { useHistory } from "react-router-dom";
+import HeroButtonComponent from "../components/Hero/HeroButtons/HeroButton";
 
 export const MoviesCatalogue = () => {
   const [movies, setMovies] = useState([]);
   const history = useHistory();
 
+  let page = 1;
+
   async function fetchMovies() {
-    const res = await getPopularMovies();
+    const res = await getPopularMovies(page);
     setMovies(res);
   }
 
@@ -27,23 +30,34 @@ export const MoviesCatalogue = () => {
   }
 
   return (
-    <div className={styles["movie-catalog"]}>
-      {movies?.map(
-        (movie: {
-          title: string;
-          poster_path: string;
-          id: number;
-          overview: string;
-        }) => (
-          <MovieCard
-            title={movie.title}
-            cover={`${config.image_base_url + movie.poster_path}`}
-            id={movie.id}
-            synopsis={movie.overview}
-            key={0}
-          />
-        )
-      )}
-    </div>
+    <>
+      <div className={styles["movie-catalog"]}>
+        {movies?.map(
+          (movie: {
+            title: string;
+            poster_path: string;
+            id: number;
+            overview: string;
+          }) => (
+            <MovieCard
+              title={movie.title}
+              cover={`${config.image_base_url + movie.poster_path}`}
+              id={movie.id}
+              synopsis={movie.overview}
+              key={0}
+            />
+          )
+        )}
+      </div>
+
+      <HeroButtonComponent
+        title={"Mais filmes"}
+        action={() => {
+          page++;
+          fetchMovies();
+        }}
+        icon={"plus"}
+      />
+    </>
   );
 };
