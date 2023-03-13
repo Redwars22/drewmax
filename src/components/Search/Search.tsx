@@ -13,6 +13,7 @@ export default function SearchButton() {
           history.push("/search");
         }}
         icon={"search"}
+        hint="Pesquisar filmes e séries"
       />
     </div>
   );

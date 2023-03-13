@@ -25,6 +25,7 @@ export default function HeaderComponent() {
             action={() => {
               history.push("user");
             }}
+            hint="Meu perfil"
           />
         )}
         <SearchButton />
