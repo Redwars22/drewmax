@@ -12,9 +12,10 @@ import { plans } from "../../../data/plans";
 import currency from "currency.js";
 import { UserContext } from "../../../modules/UserContext";
 import { useHistory } from "react-router-dom";
+import { IFavorite } from "../../../types/types";
 
 export default function UserComponent() {
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState<IFavorite[] | []>([]);
   const [userDataEdit, setUserDataEdit] = useState({
     name: "",
     email: "",
@@ -33,6 +34,7 @@ export default function UserComponent() {
       billingDay: 0,
       isActive: false,
     },
+    isLogged: true,
   };
 
   useEffect(() => {
@@ -96,17 +98,15 @@ export default function UserComponent() {
         <section>
           <h1>Lista de Favoritos</h1>
           <div className="movies-favorite-list">
-            {favorites.length > 0 ? (
-              favorites?.map(
-                (movie: { title: string; cover: string; synopsis: string }) => (
-                  <MovieCard
-                    title={movie?.title}
-                    cover={movie?.cover}
-                    synopsis={movie?.synopsis}
-                    id={0}
-                  />
-                )
-              )
+            {favorites?.[0] ? (
+              favorites?.map((movie: IFavorite) => (
+                <MovieCard
+                  title={movie?.title!}
+                  cover={movie?.cover!}
+                  synopsis={movie?.synopsis}
+                  id={0}
+                />
+              ))
             ) : (
               <span>
                 Nenhum filme ou série foi favoritado. Você pode adicionar
@@ -114,7 +114,7 @@ export default function UserComponent() {
               </span>
             )}
           </div>
-          {fetchFavorites().length > 0 && (
+          {fetchFavorites()?.[0] && (
             <HeroButtonComponent
               title={"Remover Todos os Favoritos"}
               icon={"trash-fill"}

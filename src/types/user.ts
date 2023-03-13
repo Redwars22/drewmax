@@ -1,3 +1,5 @@
+import { IFavorite } from "./types";
+
 export type UserData = {
   name: string;
   avatar: string;
@@ -6,6 +8,7 @@ export type UserData = {
     billingDay: number;
     isActive: boolean;
   };
+  isLogged: boolean;
 };
 
 export type UserDataStore = {
@@ -16,5 +19,7 @@ export type UserDataStore = {
     billingDay: number;
     isActive: boolean;
   };
+  isLogged: boolean;
+  favorites?: IFavorite[];
   updateUserInfo: (key: string, value: string) => void;
 };

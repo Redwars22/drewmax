@@ -12,6 +12,8 @@ export const useUserStore = create<UserDataStore>()(
         billingDay: 0,
         isActive: false,
       },
+      isLogged: false,
+      favorites: [],
       updateUserInfo: (key: string, value: any) =>
         set((s: any) => ({ ...s, [key as any]: value })),
     }),
