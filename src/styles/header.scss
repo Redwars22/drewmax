@@ -1,18 +1,19 @@
+@import "../index.scss";
+
 header {
   display: flex;
   justify-content: space-between;
   max-width: 1000px;
   width: 50%;
-  border: 0.2rem dashed red;
   padding: 1rem;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 1rem;
-  border-radius: 1rem;
   position: sticky;
   top: 5px;
   z-index: 1000;
   background-color: rgba(5, 0, 0, 0.89);
+  @include defaultBorder;
+  @include marginAuto;
+  border-style: dashed;
 }
 
 .app-title {
@@ -25,4 +26,10 @@ header {
 .app-title:hover {
   font-size: 2.2rem;
   transition: font-size 500ms;
+}
+
+@media screen and (max-width: 864px) {
+  header {
+    width: 85%;
+  }
 }

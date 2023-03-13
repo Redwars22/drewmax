@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import HeroButtonComponent from "../../Hero/HeroButtons/HeroButton";
 import { UserContext } from "../../../modules/UserContext";
 import { useHistory } from "react-router-dom";
+import styles from "../../../styles/elements.module.scss";
 
 export default function LoginComponent() {
   const user = useContext(UserContext);
@@ -29,6 +30,7 @@ export default function LoginComponent() {
         marginTop: "3rem",
         color: "red",
         alignItems: "center",
+        textAlign: "center",
       }}
     >
       <i className="bi bi-film" style={{ fontSize: "5rem" }}></i>
@@ -37,13 +39,13 @@ export default function LoginComponent() {
         <label htmlFor="">E-mail:</label>
         <input
           type="email"
-          className="default-input"
+          className={styles["default-input"]}
           onChange={(e) => handleUpdateData("email", e.target.value)}
         />
         <label htmlFor="">Senha:</label>
         <input
           type="password"
-          className="default-input"
+          className={styles["default-input"]}
           onChange={(e) => handleUpdateData("password", e.target.value)}
         />
       </div>

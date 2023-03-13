@@ -1,5 +1,5 @@
 import SearchComponent from "../Search/Search";
-import "../../styles/header.css";
+import "../../styles/header.scss";
 import "../../styles/card.css";
 import { Link } from "react-router-dom";
 import SearchButton from "../Search/Search";

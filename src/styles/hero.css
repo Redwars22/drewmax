@@ -1,5 +1,6 @@
 .hero-image {
   max-width: 100%;
+  width: 100%;
   margin-top: -250px;
   margin-bottom: -100px;
 }
@@ -22,4 +23,59 @@
 
 .hero-buttons {
   display: flex;
+}
+
+@media screen and (max-width: 1211px) {
+  .hero-image {
+    margin-top: -150px;
+  }
+
+  .hero-description {
+    margin-top: -50px;
+    width: 85%;
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .hero-title,
+  .hero-synopsis {
+    display: none;
+  }
+
+  .hero-image {
+    margin-top: -105px;
+  }
+
+  .hero-description {
+    background-color: #ffffff00;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -10px;
+    margin-bottom: -55px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-title,
+  .hero-synopsis,
+  .hero-buttons,
+  .hero-description {
+    display: none;
+  }
+
+  .hero-image {
+    margin-top: -105px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .hero-title,
+  .hero-synopsis,
+  .hero-buttons,
+  .hero-description,
+  .hero-image {
+    display: none;
+  }
 }

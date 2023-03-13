@@ -40,7 +40,7 @@ export default function MovieCard(props: IMovieCard) {
         className="movie-card-cover"
         alt={`capa do filme ${props.title}`}
       ></img>
-      <div className="movie-info-container">
+      {/* <div className="movie-info-container">
         <span className="movie-title">{props.title}</span>
         <p className="movie-synopsis">
           {props.synopsis !== "" || props.synopsis !== undefined
@@ -49,7 +49,7 @@ export default function MovieCard(props: IMovieCard) {
               : props.synopsis
             : "Sentimos muito, mas não foi fornecida uma sinopse para este filme."}
         </p>
-      </div>
+      </div> */}
     </div>
   );
 }

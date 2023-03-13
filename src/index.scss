@@ -33,3 +33,25 @@ code {
   background: red;
   border-radius: 10px;
 }
+
+$default-red: "red";
+
+@mixin flexHLayout {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flexVLayout {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin defaultBorder {
+  border: 2px solid red;
+  border-radius: 1rem;
+}
+
+@mixin marginAuto {
+  margin-left: auto;
+  margin-right: auto;
+}

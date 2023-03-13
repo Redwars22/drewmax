@@ -7,8 +7,8 @@
 .card:hover {
   filter: saturate(100%);
   transition: filter 1s;
-  border: 5px solid rgba(255, 62, 62);
-  border-radius: 0.5rem;
+  /* border: 5px solid rgba(255, 62, 62);
+  border-radius: 0.5rem; */
 }
 
 .card:hover > .movie-info-container {
@@ -40,4 +40,28 @@
   border-bottom-right-radius: 0.7rem;
   padding: 0.5rem;
   display: none;
+}
+
+@media screen and (min-width: 1367px) {
+  .card {
+    width: 225px;
+    height: 315px;
+  }
+
+  .movie-card-cover {
+    width: 225px;
+    height: 315px;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .card {
+    width: 125px;
+    height: 215px;
+  }
+
+  .movie-card-cover {
+    width: 125px;
+    height: 215px;
+  }
 }

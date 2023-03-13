@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import MovieCard from "../components/Card/MovieCard";
 import { getPopularMovies } from "./api";
-import "../styles/elements.css";
+import styles from "../styles/elements.module.scss";
 import { config } from "./config";
 import { shuffle } from "../utils/shuffle";
 import { useQuery } from "react-query";
@@ -27,7 +27,7 @@ export const MoviesCatalogue = () => {
   }
 
   return (
-    <div className="movie-catalog">
+    <div className={styles["movie-catalog"]}>
       {movies?.map(
         (movie: {
           title: string;

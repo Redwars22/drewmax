@@ -1,13 +1,13 @@
+@import "../index.scss";
+
 .horizontal-navigation {
-  display: flex;
-  flex-direction: row;
+  @include flexHLayout;
   gap: 1rem;
   margin-top: 1rem;
 }
 
 .vertical-navigation {
-  display: flex;
-  flex-direction: column;
+  @include flexVLayout;
 }
 
 .section-title {
@@ -24,22 +24,19 @@
 }
 
 .user-area {
-  display: flex;
-  flex-direction: row;
   margin-left: 20%;
   margin-right: 20%;
   max-width: 60%;
   padding: 2rem;
-  border: 2px solid red;
   margin-top: 1rem;
-  border-radius: 1rem;
+  @include defaultBorder;
+  @include flexHLayout;
 }
 
 .plans-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(150px, 1fr));
-  border: 2px solid red;
-  border-radius: 1rem;
+  @include defaultBorder;
   margin: 1rem;
   padding: 0.5rem;
 }
