@@ -1,62 +1,17 @@
-import { useCallback, useContext } from "react";
-import "../../styles/player.css";
+import { useCallback, useContext, useEffect } from "react";
+import "../../styles/player.scss";
 import { PlayerContext } from "../../modules/PlayerContext";
-import HeroButtonComponent from "../Hero/HeroButtons/HeroButton";
-import { handleRating } from "../../modules/handleRating";
 import VideoControlsComponent from "./VideoControlsComponent";
-import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function PlayerComponent() {
   const player = useContext(PlayerContext);
-  const history = useHistory();
 
   const renderPlayerArea = useCallback(() => {
     return (
       <>
         {player?.getState().isPlaying && (
           <div className="player">
-            <div
-              className="player-header"
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                maxHeight: "50px",
-                gap: "1rem",
-                alignItems: "center",
-                justifyContent: "space-between",
-                width: "100%",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: "1rem",
-                }}
-              >
-                <HeroButtonComponent
-                  title=""
-                  icon="arrow-return-left"
-                  action={() => history.push("/")}
-                />
-                <span className="player-movie-title">
-                  {player?.getState().movie.title}
-                </span>
-              </div>
-              <div style={{ display: "flex", flexDirection: "row" }}>
-                <HeroButtonComponent
-                  title={"Não Gostei"}
-                  icon={"hand-thumbs-down"}
-                  action={() => handleRating("dislike")}
-                />
-                <HeroButtonComponent
-                  title={"Gostei"}
-                  icon={"hand-thumbs-up"}
-                  action={() => handleRating("like")}
-                />
-              </div>
-            </div>
             <div>
               <iframe
                 className="player-movie-container"

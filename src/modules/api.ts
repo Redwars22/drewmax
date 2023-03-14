@@ -11,6 +11,7 @@ export async function getPopularMovies(page = 1) {
     );
     const responseData = await response.json();
     data = responseData?.results;
+    console.log("DAT: ", data);
   } catch (error) {}
   return data;
 }

@@ -5,6 +5,7 @@ export interface IMovieCard {
   cover: string;
   synopsis: string | undefined;
   id: number;
+  runtime?: number | null;
 }
 
 export interface ICardsSection {

@@ -12,7 +12,7 @@ export default function UserComponent() {
       className={styles["user-area"]}
       style={{
         color: "red",
-        backgroundColor: "black",
+        backgroundColor: "#0a0909",
         opacity: 0.9,
         marginBottom: 16,
       }}

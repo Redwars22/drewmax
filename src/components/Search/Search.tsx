@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import "../../styles/search.css";
+import "../../styles/search.scss";
 import HeroButtonComponent from "../Hero/HeroButtons/HeroButton";
 
 export default function SearchButton() {

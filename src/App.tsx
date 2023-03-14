@@ -1,5 +1,6 @@
 import "./styles/layout.module.scss";
 import "./styles/elements.module.scss";
+import "./styles/card.scss";
 import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";

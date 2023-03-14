@@ -5,7 +5,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #00070a;
+  background-color: #282828;
   min-height: 100vh;
   position: relative;
 }
@@ -36,7 +36,7 @@ code {
   border-radius: 10px;
 }
 
-$default-red: "red";
+$default-red: red;
 
 @mixin flexHLayout {
   display: flex;
@@ -49,7 +49,7 @@ $default-red: "red";
 }
 
 @mixin defaultBorder {
-  border: 2px solid red;
+  border: 2px solid $default-red;
   border-radius: 1rem;
 }
 

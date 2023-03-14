@@ -16,7 +16,6 @@ export default function NavigationComponent() {
   return (
     <BrowserRouter>
       <HeaderComponent />
-
       <Switch>
         <Route exact path="/">
           <CatalogueComponent />

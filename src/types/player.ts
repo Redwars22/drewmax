@@ -6,6 +6,7 @@ export interface IPlayerContext {
     data?: {
       synopsis: string | undefined;
       cover: string;
+      runtime?: number | null;
     };
   };
 }

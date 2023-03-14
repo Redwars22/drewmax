@@ -1,35 +1,22 @@
 .player {
   background-color: rgba(0, 0, 0, 0.911);
-  width: calc(100vw - 4rem);
-  height: calc(100vh - 4rem);
   position: absolute;
   top: 0;
-  z-index: 100000;
-  padding: 2rem !important;
-}
-
-.player-movie-title {
-  color: white;
-  font-size: 1.5rem;
+  z-index: 10000;
+  margin-top: -1rem;
+  height: calc(100vh + 1rem);
+  width: calc(100vw - 0.7rem);
 }
 
 .player-movie-container {
+  position: absolute;
   width: 100vw;
   height: 100vh;
-  position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
-}
-
-.player-header {
-  opacity: 0;
-}
-
-.player-header:hover {
-  opacity: 1;
-  background-color: rgba(0, 0, 0, 0.534);
-  transition: opacity 500ms;
+  z-index: 10000;
+  margin-top: -1rem;
+  margin-left: -0.75rem;
 }
 
 .controls-container {
@@ -41,6 +28,7 @@
   bottom: 0;
   margin-bottom: 15px;
   opacity: 0;
+  z-index: 10001;
 }
 
 .controls-container:hover {

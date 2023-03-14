@@ -1,6 +1,6 @@
-import React, { ReactNode, FC, createContext, useState } from "react";
+import React, { createContext, useState } from "react";
 import { IPlayerContext } from "../types/player";
-import { JsxElement } from "typescript";
+import { toast } from "react-toastify";
 
 type IPlayer = null | {
   player: IPlayerContext;
@@ -36,7 +36,11 @@ const PlayerContextProvider = ({
           cover: values.movie.data?.cover!,
         },
       },
+      runtime: values.movie.data!.runtime,
     }));
+
+    const text = `Você está assistindo a ${values.movie.title}`;
+    toast(text);
   };
 
   const getState = () => player;

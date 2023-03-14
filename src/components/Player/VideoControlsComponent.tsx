@@ -7,12 +7,15 @@ import {
 } from "../../modules/handleFavorites";
 import { PlayerContext } from "../../modules/PlayerContext";
 import { IFavorite } from "../../types/types";
+import { useHistory } from "react-router-dom";
+import { handleRating } from "../../modules/handleRating";
 
 export default function VideoControlsComponent() {
   const [isPlaying, setIsPlaying] = useState(true);
   const [videoProgress, setVideoProgress] = useState(0);
-  const [timeStamp, setTimeStamp] = useState("00:00");
+  const [timeStamp, setTimeStamp] = useState("01:57");
   const player = useContext(PlayerContext);
+  const history = useHistory();
   const [isAlreadyInTheFavsList, setIsAlreadyInTheFavsList] = useState(false);
 
   useEffect(() => {
@@ -30,6 +33,11 @@ export default function VideoControlsComponent() {
   return (
     <div className="controls-container">
       <div style={{ display: "flex" }}>
+        <HeroButtonComponent
+          title=""
+          icon="arrow-return-left"
+          action={() => history.push("/")}
+        />
         {!isPlaying && (
           <HeroButtonComponent
             title={""}
@@ -64,14 +72,9 @@ export default function VideoControlsComponent() {
             width: "72vw",
           }}
         ></input>
-        <span style={{ color: "white" }}>01:16:59</span>
+        <span style={{ color: "white" }}>01:28:37</span>
       </div>
       <div style={{ display: "flex" }}>
-        <HeroButtonComponent
-          title={""}
-          icon={"question"}
-          action={() => toast("Não tem ajuda, se vire!")}
-        />
         <HeroButtonComponent
           title={""}
           icon={"heart"}
@@ -82,6 +85,16 @@ export default function VideoControlsComponent() {
               synopsis: player?.getState().movie.data?.synopsis,
             })
           }
+        />
+        <HeroButtonComponent
+          title={""}
+          icon={"hand-thumbs-down"}
+          action={() => handleRating("dislike")}
+        />
+        <HeroButtonComponent
+          title={""}
+          icon={"hand-thumbs-up"}
+          action={() => handleRating("like")}
         />
       </div>
     </div>

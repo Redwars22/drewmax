@@ -24,6 +24,7 @@ export default function MovieCard(props: IMovieCard) {
               data: {
                 synopsis: props.synopsis,
                 cover: props.cover,
+                runtime: props.runtime,
               },
             },
           });
