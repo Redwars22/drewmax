@@ -30,7 +30,16 @@ export const MoviesCatalogue = () => {
   }
 
   return (
-    <>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "1rem",
+        marginBottom: "1.5rem",
+      }}
+    >
       <div className={styles["movie-catalog"]}>
         {movies?.map(
           (movie: {
@@ -49,15 +58,14 @@ export const MoviesCatalogue = () => {
           )
         )}
       </div>
-
       <HeroButtonComponent
-        title={"Mais filmes"}
+        title={"Mais recomendações de filmes"}
         action={() => {
           page++;
           fetchMovies();
         }}
-        icon={"plus"}
+        icon={"dice-5-fill"}
       />
-    </>
+    </div>
   );
 };

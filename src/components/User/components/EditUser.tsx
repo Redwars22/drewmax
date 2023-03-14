@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useUserStore } from "../../../store/UserStore";
 import HeroButtonComponent from "../../Hero/HeroButtons/HeroButton";
 import styles from "../../../styles/elements.module.scss";
+import { UserContext } from "../../../modules/UserContext";
 
 export default function EditUserComponent() {
   const [userDataEdit, setUserDataEdit] = useState({
@@ -51,6 +52,12 @@ export default function EditUserComponent() {
             }));
           }}
         />
+        <br />
+        <span>
+          <em>
+            * URL da imagem precisa ter um formato suportado pelo seu navegador
+          </em>
+        </span>
       </div>
       <HeroButtonComponent
         title={"Salvar alterações"}

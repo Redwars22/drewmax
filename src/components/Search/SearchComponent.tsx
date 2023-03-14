@@ -1,7 +1,7 @@
 import { setTextRange } from "typescript";
 import CardsSection from "../CardsSection/CardsSection";
 import { useCallback, useEffect, useState } from "react";
-import { movies } from "../../data/movies";
+import { movies } from "../../data/mocks/movies";
 import MovieCard from "../Card/MovieCard";
 import { IMovieCard } from "../../types/types";
 import NotFound from "../Error/NotFound";

@@ -11,6 +11,7 @@ import { hero } from "../data/hero";
 import { MoviesCatalogue } from "../modules/renderMovies";
 import LoginComponent from "../components/User/screen/Login";
 import LoginError from "../components/Error/LoginError";
+import HeroButtonComponent from "../components/Hero/HeroButtons/HeroButton";
 
 export default function NavigationComponent() {
   return (
@@ -27,14 +28,14 @@ export default function NavigationComponent() {
               type: "fadein",
             }}
           >
-            <>
+            <div>
               <HeroComponent
                 title={hero.title}
                 synopsis={hero.synopsis}
                 image={hero.image}
               />
               {MoviesCatalogue()}
-            </>
+            </div>
           </AndrewFade>
         </Route>
         <Route path="/login">
@@ -129,6 +130,15 @@ export default function NavigationComponent() {
           </AndrewFade>
         </Route>
       </Switch>
+      {/* <FooterComponent
+        backgroundColor={"red"}
+        foregroundColor={"white"}
+        appName={"DREWMAX"}
+        links={footerLinks}
+        description={
+          "Um serviço de streaming projetado para te oferecer uma boa experiência, um catálogo bem abrangente e um preço acessível para que você possa curtir suas séries e filmes favoritos com a sua família e amigos."
+        }
+      /> */}
     </BrowserRouter>
   );
 }

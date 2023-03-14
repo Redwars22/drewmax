@@ -20,6 +20,10 @@ export default function UserComponent() {
       <section
         style={{
           padding: "1rem",
+          display: "flex",
+          flexDirection: "column",
+          gap: "1.5rem",
+          alignItems: "center",
         }}
       >
         <FavoritesComponent />

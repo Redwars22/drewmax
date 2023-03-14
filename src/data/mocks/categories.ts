@@ -1,4 +1,4 @@
-import { ICategories } from "../types/types";
+import { ICategories } from "../../types/types";
 
 export const categories = [
   { title: "Continue de onde parou", id: 0, isWhereYouLeftOffSection: true },

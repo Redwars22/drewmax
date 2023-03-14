@@ -1,4 +1,4 @@
-import { movies } from "../../data/movies";
+import { movies } from "../../data/mocks/movies";
 import { ICardsSection, IMovieCard } from "../../types/types";
 import { shuffle } from "../../utils/shuffle";
 import MovieCard from "../Card/MovieCard";

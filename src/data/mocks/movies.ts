@@ -1,4 +1,4 @@
-import { IMovieCard } from "../types/types";
+import { IMovieCard } from "../../types/types";
 
 export const movies: IMovieCard[] = [
   {
