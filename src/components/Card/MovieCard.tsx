@@ -36,9 +36,14 @@ export default function MovieCard(props: IMovieCard) {
       }}
     >
       <img
-        src={props.cover}
+        src={
+          props.cover.includes("null")
+            ? "http://lexingtonvenue.com/media/poster-placeholder.jpg"
+            : props.cover
+        }
         className="movie-card-cover"
         alt={`capa do filme ${props.title}`}
+        title={`${props.title} - ${props.synopsis}`}
       ></img>
       {/* <div className="movie-info-container">
         <span className="movie-title">{props.title}</span>

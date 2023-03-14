@@ -3,131 +3,44 @@ import AndrewFade from "../andrewnimate/Fade";
 import Page404 from "../components/Error/404";
 import DefaultError from "../components/Error/DefaultError";
 import HeaderComponent from "../components/Header/Header";
-import HeroComponent from "../components/Hero/Hero";
 import PlayerComponent from "../components/Player/Player";
 import SearchComponent from "../components/Search/SearchComponent";
 import UserComponent from "../components/User/screen/User";
-import { hero } from "../data/hero";
-import { MoviesCatalogue } from "../modules/renderMovies";
 import LoginComponent from "../components/User/screen/Login";
 import LoginError from "../components/Error/LoginError";
-import HeroButtonComponent from "../components/Hero/HeroButtons/HeroButton";
+import CatalogueComponent from "./screens/Catalogue";
+import { useHistory } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function NavigationComponent() {
   return (
     <BrowserRouter>
       <HeaderComponent />
+
       <Switch>
         <Route exact path="/">
-          <AndrewFade
-            props={{
-              increment: 0.1,
-              initialOpacity: 0,
-              targetOpacity: 1,
-              interval: 50,
-              type: "fadein",
-            }}
-          >
-            <div>
-              <HeroComponent
-                title={hero.title}
-                synopsis={hero.synopsis}
-                image={hero.image}
-              />
-              {MoviesCatalogue()}
-            </div>
-          </AndrewFade>
+          <CatalogueComponent />
         </Route>
         <Route path="/login">
-          <AndrewFade
-            props={{
-              increment: 0.1,
-              initialOpacity: 0,
-              targetOpacity: 1,
-              interval: 50,
-              type: "fadein",
-            }}
-          >
-            <LoginComponent />
-          </AndrewFade>
+          <LoginComponent />
         </Route>
         <Route path="/watch">
-          <AndrewFade
-            props={{
-              increment: 0.1,
-              initialOpacity: 0,
-              targetOpacity: 1,
-              interval: 50,
-              type: "fadein",
-            }}
-          >
-            <PlayerComponent />
-          </AndrewFade>
+          <PlayerComponent />
         </Route>
         <Route path="/search">
-          <AndrewFade
-            props={{
-              increment: 0.1,
-              initialOpacity: 0,
-              targetOpacity: 1,
-              interval: 50,
-              type: "fadein",
-            }}
-          >
-            <SearchComponent />
-          </AndrewFade>
+          <SearchComponent />
         </Route>
         <Route path="/error">
-          <AndrewFade
-            props={{
-              increment: 0.1,
-              initialOpacity: 0,
-              targetOpacity: 1,
-              interval: 50,
-              type: "fadein",
-            }}
-          >
-            <DefaultError />
-          </AndrewFade>
+          <DefaultError />
         </Route>
         <Route path="/user">
-          <AndrewFade
-            props={{
-              increment: 0.1,
-              initialOpacity: 0,
-              targetOpacity: 1,
-              interval: 50,
-              type: "fadein",
-            }}
-          >
-            <UserComponent />
-          </AndrewFade>
+          <UserComponent />
         </Route>
         <Route path="/login-error">
-          <AndrewFade
-            props={{
-              increment: 0.1,
-              initialOpacity: 0,
-              targetOpacity: 1,
-              interval: 50,
-              type: "fadein",
-            }}
-          >
-            <LoginError />
-          </AndrewFade>
+          <LoginError />
         </Route>
         <Route path="*">
-          <AndrewFade
-            props={{
-              increment: 0.1,
-              initialOpacity: 0,
-              targetOpacity: 1,
-              interval: 50,
-              type: "fadein",
-            }}
-          >
-            <Page404 />
-          </AndrewFade>
+          <Page404 />
         </Route>
       </Switch>
       {/* <FooterComponent
@@ -142,3 +55,16 @@ export default function NavigationComponent() {
     </BrowserRouter>
   );
 }
+
+/**
+ * 
+ *       <AndrewFade
+        props={{
+          increment: 0.1,
+          initialOpacity: 0,
+          targetOpacity: 1,
+          interval: 50,
+          type: "fadein",
+        }}
+      >
+ */

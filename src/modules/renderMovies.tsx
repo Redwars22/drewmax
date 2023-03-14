@@ -11,19 +11,26 @@ import HeroButtonComponent from "../components/Hero/HeroButtons/HeroButton";
 export const MoviesCatalogue = () => {
   const [movies, setMovies] = useState([]);
   const history = useHistory();
-
-  let page = 1;
+  const [page, setPage] = useState(Math.floor(Math.random() * 99));
 
   async function fetchMovies() {
     const res = await getPopularMovies(page);
     setMovies(res);
   }
 
+  useEffect(() => {
+    async function getMovies() {
+      await fetchMovies();
+    }
+
+    getMovies();
+  }, [page]);
+
   const { data, status } = useQuery("movies", fetchMovies);
 
-  // if (status === "loading") {
-  //   return <h1 style={{ color: "red" }}>Carregando...</h1>;
-  // }
+  if (status === "loading") {
+    return <h1 style={{ color: "red" }}>Carregando...</h1>;
+  }
 
   if (status === "error") {
     history.push("/error");
@@ -60,10 +67,7 @@ export const MoviesCatalogue = () => {
       </div>
       <HeroButtonComponent
         title={"Mais recomendações de filmes"}
-        action={() => {
-          page++;
-          fetchMovies();
-        }}
+        action={() => setPage(page + 1)}
         icon={"dice-5-fill"}
       />
     </div>
