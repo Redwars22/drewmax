@@ -1,5 +1,5 @@
 import { IHeroImage } from "../../types/types";
-import "../../styles/hero.css";
+import "../../styles/hero.scss";
 import HeroDescriptionComponent from "./HeroDescription/HeroDescription";
 import { useContext } from "react";
 import { UserContext } from "../../modules/UserContext";

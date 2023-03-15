@@ -59,6 +59,7 @@ export default function EditUserComponent() {
           </em>
         </span>
       </div>
+      <br />
       <HeroButtonComponent
         title={"Salvar alterações"}
         icon={"save"}

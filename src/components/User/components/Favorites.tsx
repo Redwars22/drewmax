@@ -22,7 +22,10 @@ export default function FavoritesComponent() {
   return (
     <section>
       <h1>Lista de Favoritos</h1>
-      <div className="search-results">
+      <div
+        className="search-results"
+        style={{ marginBottom: 30, maxWidth: "100%" }}
+      >
         {favorites?.[0] ? (
           favorites?.map((movie: IFavorite) => (
             <MovieCard
