@@ -3,9 +3,11 @@ import HeroButtonComponent from "../../Hero/HeroButtons/HeroButton";
 import { plans } from "../../../data/plans";
 import currency from "currency.js";
 import styles from "../../../styles/layout.module.scss";
+import { useHistory } from "react-router-dom";
 
 export default function BillingComponent() {
   const store = useUserStore((s: any) => s.userData);
+  const history = useHistory();
 
   const getPlanByID = (plan: string) => {
     switch (plan) {
@@ -63,14 +65,9 @@ export default function BillingComponent() {
       </div>
       <div style={{ display: "flex", flexDirection: "row" }}>
         <HeroButtonComponent
-          title={"Alterar Forma de Pagamento"}
+          title={"Alterar Forma de Pagamento e plano"}
           icon={"credit-card"}
-          action={() => {}}
-        />
-        <HeroButtonComponent
-          title={"Trocar de Plano"}
-          icon={"toggles"}
-          action={() => {}}
+          action={() => history.push("/payment")}
         />
       </div>
     </section>

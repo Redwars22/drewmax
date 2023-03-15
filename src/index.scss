@@ -57,3 +57,15 @@ $default-red: red;
   margin-left: auto;
   margin-right: auto;
 }
+
+select {
+  color: red;
+  border: 2px solid red;
+  background-color: #0e0d0d;
+  padding: 10px;
+  border-radius: 1rem;
+  font-size: 1rem;
+  margin: 5px;
+  display: flex;
+  gap: 0.5rem;
+}

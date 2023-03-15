@@ -11,6 +11,7 @@ import LoginError from "../components/Error/LoginError";
 import CatalogueComponent from "./screens/Catalogue";
 import { useHistory } from "react-router-dom";
 import { useEffect } from "react";
+import PaymentScreen from "../components/Payment/screen/Payment";
 
 export default function NavigationComponent() {
   return (
@@ -37,6 +38,9 @@ export default function NavigationComponent() {
         </Route>
         <Route path="/login-error">
           <LoginError />
+        </Route>
+        <Route path="/payment">
+          <PaymentScreen />
         </Route>
         <Route path="*">
           <Page404 />

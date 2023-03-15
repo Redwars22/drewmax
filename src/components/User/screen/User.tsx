@@ -3,8 +3,6 @@ import FavoritesComponent from "../components/Favorites";
 import UserInfoComponent from "../components/UserInfo";
 import EditUserComponent from "../components/EditUser";
 import styles from "../../../styles/layout.module.scss";
-import { useEffect } from "react";
-import { useHistory } from "react-router-dom";
 
 export default function UserComponent() {
   return (
