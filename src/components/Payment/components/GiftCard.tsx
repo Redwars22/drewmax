@@ -4,8 +4,9 @@ import HeroButtonComponent from "../../Hero/HeroButtons/HeroButton";
 import { giftCardRule } from "../../../utils/regex";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useUserStore } from "../../../store/UserStore";
 
-export default function GiftCardComponent() {
+export default function GiftCardComponent(props: { selectedPlan: string }) {
   const [giftCard, setGiftCard] = useState("");
   const history = useHistory();
 
@@ -15,6 +16,14 @@ export default function GiftCardComponent() {
       toast(
         "Você resgatou seu cartão-presente com sucesso! Agora você pode assistir à Drewmax!"
       );
+      useUserStore.setState((s) => ({
+        ...s,
+        payment: {
+          billingDay: new Date().getUTCDate(),
+          currentPlanID: props.selectedPlan as "1" | "2" | "3",
+          isActive: true,
+        },
+      }));
       return;
     }
 

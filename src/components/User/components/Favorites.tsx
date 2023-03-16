@@ -7,7 +7,6 @@ import { IFavorite } from "../../../types/types";
 import MovieCard from "../../Card/MovieCard";
 import HeroButtonComponent from "../../Hero/HeroButtons/HeroButton";
 
-export {};
 export default function FavoritesComponent() {
   const [favorites, setFavorites] = useState<IFavorite[] | []>([]);
 

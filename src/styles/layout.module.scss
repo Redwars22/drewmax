@@ -33,6 +33,12 @@
   @include flexHLayout;
 }
 
+.plans-container {
+  @include flexVLayout;
+  align-items: center;
+  margin: 1rem;
+}
+
 .plans-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(150px, 1fr));

@@ -6,7 +6,6 @@ import styles from "../../../styles/layout.module.scss";
 import { useHistory } from "react-router-dom";
 
 export default function BillingComponent() {
-  const store = useUserStore((s: any) => s.userData);
   const history = useHistory();
 
   const getPlanByID = (plan: string) => {
@@ -28,14 +27,15 @@ export default function BillingComponent() {
       <ul>
         <li>
           <strong>Plano Atual: </strong>{" "}
-          {getPlanByID(store?.payment.currentPlanID)}
+          {getPlanByID(useUserStore.getState().payment.currentPlanID)}
         </li>
         <li>
-          <strong>Data de Cobrança: </strong> {store?.payment.billingDay}{" "}
+          <strong>Data de Cobrança: </strong>{" "}
+          {useUserStore.getState().payment.billingDay}{" "}
         </li>
         <li>
           <strong>Status: </strong>{" "}
-          {store?.payment.isActive ? "ativo" : "pendente"}
+          {useUserStore.getState().payment.isActive ? "ativo" : "pendente"}
         </li>
       </ul>
       <div
@@ -63,6 +63,7 @@ export default function BillingComponent() {
           </div>
         ))}
       </div>
+      {/**Selected Plan Component */}
       <div style={{ display: "flex", flexDirection: "row" }}>
         <HeroButtonComponent
           title={"Alterar Forma de Pagamento e plano"}

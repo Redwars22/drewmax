@@ -1,21 +1,29 @@
-.player {
-  background-color: rgba(0, 0, 0, 0.911);
+:root {
+  --player-z-index: 10000;
+  --controls-z-index: 10001;
+  --player-margin-top: -1rem;
+  --player-height: calc(100vh + 1rem);
+  --player-width: calc(100vw - 0.7rem);
+  --controls-opacity: 0;
+  --controls-transition-duration: 500ms;
+}
+
+.player,
+.player-movie-container {
   position: absolute;
   top: 0;
-  z-index: 10000;
-  margin-top: -1rem;
-  height: calc(100vh + 1rem);
-  width: calc(100vw - 0.7rem);
+  z-index: var(--player-z-index);
+  margin-top: var(--player-margin-top);
+  height: var(--player-height);
+}
+
+.player {
+  background-color: rgba(0, 0, 0, 0.911);
+  width: var(--player-width);
 }
 
 .player-movie-container {
-  position: absolute;
   width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  z-index: 10000;
-  margin-top: -1rem;
   margin-left: -0.75rem;
 }
 
@@ -27,11 +35,11 @@
   position: absolute;
   bottom: 0;
   margin-bottom: 15px;
-  opacity: 0;
-  z-index: 10001;
+  opacity: var(--controls-opacity);
+  z-index: var(--controls-z-index);
+  transition: opacity var(--controls-transition-duration);
 }
 
 .controls-container:hover {
   opacity: 1;
-  transition: opacity 500ms;
 }

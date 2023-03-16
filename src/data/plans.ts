@@ -3,6 +3,7 @@ export const plans = [
     name: "BÁSICO",
     price: 11.99,
     description: ["Até 2 telas", "Até 3 dispositivos", "Resolução Full HD"],
+    id: "1",
   },
   {
     name: "FAMÍLIA",
@@ -13,6 +14,7 @@ export const plans = [
       "Compartilhar conta com até 2 pessoas fora da sua casa",
       "Resolução Full HD",
     ],
+    id: "2",
   },
   {
     name: "PREMIUM",
@@ -22,5 +24,6 @@ export const plans = [
       "Compartilhar conta com até 5 pessoas fora da sua casa",
       "Resolução 4K",
     ],
+    id: "3",
   },
 ];
