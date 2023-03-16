@@ -26,7 +26,7 @@ export default function UserInfoComponent() {
           width: "150px",
           height: "150px",
           borderRadius: "50%",
-          border: "2px dashed red",
+          border: "2px dashed #4c4a4a",
         }}
       />
       <h1>Olá, {useUserStore.getState().name}</h1>

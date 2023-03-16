@@ -45,7 +45,7 @@ export default function BillingComponent() {
         {plans.map((plan) => (
           <div
             style={{
-              color: "red",
+              color: "#4c4a4a",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",

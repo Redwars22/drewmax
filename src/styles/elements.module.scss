@@ -3,8 +3,8 @@
   font-size: 1.2rem;
   margin: 0.2rem;
   background-color: rgba(0, 0, 0);
-  border: 0.2rem dashed red;
-  color: red;
+  border: 0.2rem dashed rgb(36, 36, 36);
+  color: rgb(90, 89, 89);
   padding: 0.3rem;
   display: flex;
   gap: 0.5rem;
@@ -14,7 +14,7 @@
 }
 
 .default-button:hover {
-  border: 0.2rem solid red;
+  border: 0.2rem solid rgb(136, 134, 134);
   background-color: rgb(32, 32, 32);
   transition: background-color 500ms;
 }
@@ -23,8 +23,8 @@
   font-size: 1.5rem;
   background-color: rgba(0, 0, 0, 0);
   border: none;
-  border-bottom: 2px solid red;
-  color: red;
+  border-bottom: 2px solid rgb(75, 74, 74);
+  color: rgb(94, 92, 92);
   margin-bottom: 3rem;
   outline: none;
 }

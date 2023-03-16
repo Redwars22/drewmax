@@ -9,7 +9,7 @@ export default function UserComponent() {
     <div
       className={styles["user-area"]}
       style={{
-        color: "red",
+        color: "#4c4a4a",
         backgroundColor: "#0a0909",
         opacity: 0.9,
         marginBottom: 16,
@@ -25,7 +25,7 @@ export default function UserComponent() {
         }}
       >
         <UserInfoComponent />
-        <hr color="red" style={{ width: "100%" }} />
+        <hr color="#4c4a4a" style={{ width: "100%" }} />
         <FavoritesComponent />
         <EditUserComponent />
         <BillingComponent />

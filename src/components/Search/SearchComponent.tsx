@@ -24,7 +24,7 @@ export default function SearchComponent() {
   return (
     <div className="search-overlay">
       <div className="search-top">
-        <h1 style={{ color: "red" }}>
+        <h1 style={{ color: "#4c4a4a" }}>
           Pesquisar no catálogo de filmes de séries
         </h1>
         <input

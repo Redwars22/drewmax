@@ -10,8 +10,12 @@ header {
   position: sticky;
   top: 5px;
   z-index: 1000;
-  background-color: rgba(5, 0, 0, 0.89);
-  @include defaultBorder;
+  background-color: rgba(15, 15, 15, 0.808);
+  // @include defaultBorder;
+  // border-color: #97b8e4;
+  // border-width: 0.4rem;
+  border-radius: 1rem;
+  border-color: rgba(0, 0, 0, 0);
   @include marginAuto;
   border-style: dashed;
 }
@@ -19,7 +23,7 @@ header {
 .app-title {
   font-size: 2rem;
   font-weight: bold;
-  color: red;
+  color: #6d727a;
   text-decoration: none;
 }
 

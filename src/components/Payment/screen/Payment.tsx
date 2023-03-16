@@ -16,7 +16,7 @@ export default function PaymentScreen() {
     <div
       className={styles["user-area"]}
       style={{
-        color: "red",
+        color: "#4c4a4a",
         backgroundColor: "#0a0909",
         opacity: 0.9,
         marginBottom: 16,

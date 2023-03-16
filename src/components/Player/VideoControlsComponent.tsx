@@ -68,7 +68,7 @@ export default function VideoControlsComponent() {
           value={videoProgress}
           max={256}
           style={{
-            accentColor: "red",
+            accentColor: "white",
             width: "72vw",
           }}
         ></input>

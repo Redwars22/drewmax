@@ -5,10 +5,10 @@ export default function Page404() {
     >
       <i
         className="bi bi-exclamation-square"
-        style={{ color: "red", fontSize: 200 }}
+        style={{ color: "#4c4a4a", fontSize: 200 }}
       ></i>
-      <h1 style={{ color: "red" }}>Ops, nada encontrado!</h1>
-      <h3 style={{ color: "red" }}>
+      <h1 style={{ color: "grey" }}>Ops, nada encontrado!</h1>
+      <h3 style={{ color: "grey" }}>
         Volte para a página inicial e escolha um dentre os vários títulos
         disponíveis para assitir.
       </h3>

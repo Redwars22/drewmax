@@ -45,7 +45,7 @@ export default function CardsSection(props: ICardsSection) {
                     style={{
                       marginTop: "-1rem",
                       zIndex: "1",
-                      accentColor: "red",
+                      accentColor: "grey",
                     }}
                   ></progress>
                 )}

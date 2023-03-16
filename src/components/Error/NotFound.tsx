@@ -5,9 +5,9 @@ export default function NotFound() {
     >
       <i
         className="bi bi-emoji-neutral"
-        style={{ color: "red", fontSize: 200 }}
+        style={{ color: "#4c4a4a", fontSize: 200 }}
       ></i>
-      <h2 style={{ color: "red" }}>
+      <h2 style={{ color: "grey" }}>
         Ops, nada encontrado! Tente procurar outro título ou verifique se você
         digitou corretamente.
       </h2>
