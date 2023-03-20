@@ -28,7 +28,7 @@ export default function LoginComponent() {
         marginLeft: "auto",
         marginRight: "auto",
         marginTop: "3rem",
-        color: "red",
+        color: "#6d727a",
         alignItems: "center",
         textAlign: "center",
       }}
