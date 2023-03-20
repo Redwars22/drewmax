@@ -1,7 +1,4 @@
-import { setTextRange } from "typescript";
-import CardsSection from "../CardsSection/CardsSection";
-import { useCallback, useEffect, useState } from "react";
-import { movies } from "../../data/mocks/movies";
+import { useEffect, useState } from "react";
 import MovieCard from "../Card/MovieCard";
 import { IMovieCard } from "../../types/types";
 import NotFound from "../Error/NotFound";

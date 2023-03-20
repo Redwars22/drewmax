@@ -11,13 +11,11 @@
   border: none;
   border-bottom: 2px solid var(--red);
   color: var(--red);
-  width: 50%;
   margin-bottom: var(--spacing);
   outline: none;
 }
 
 .search-overlay {
-  width: calc(100% - 160px);
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -28,6 +26,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .search-results {
@@ -37,4 +36,10 @@
   max-width: 90%;
   margin: 0 auto;
   flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1280px) {
+  .search-top {
+    font-size: 0.8rem;
+  }
 }
