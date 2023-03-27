@@ -15,25 +15,25 @@ export default function MovieCard(props: IMovieCard) {
     <div
       className="card"
       onClick={() => {
-        if (user.isActive) {
-          player?.setPlayerProps({
-            isPlaying: true,
-            movie: {
-              title: props.title,
-              uuid: "0",
-              data: {
-                synopsis: props.synopsis,
-                cover: props.cover,
-                runtime: props.runtime,
-              },
-            },
-          });
-          history.push("/watch");
-        } else {
-          toast(
-            "Você precisa ser um assinante para assistir a algum título. Junte-se ao Drewflix, o preço é acessível!"
-          );
-        }
+        // if (user.isActive) {
+        //   player?.setPlayerProps({
+        //     isPlaying: true,
+        //     movie: {
+        //       title: props.title,
+        //       uuid: "0",
+        //       data: {
+        //         synopsis: props.synopsis,
+        //         cover: props.cover,
+        //         runtime: props.runtime,
+        //       },
+        //     },
+        //   });
+        history.push("/error");
+        // } else {
+        //   toast(
+        //     "Você precisa ser um assinante para assistir a algum título. Junte-se ao Drewflix, o preço é acessível!"
+        //   );
+        // }
       }}
     >
       <img
