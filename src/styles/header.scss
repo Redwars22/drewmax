@@ -1,4 +1,5 @@
 @import "../index.scss";
+@import './colorschema.scss';
 
 header {
   display: flex;
@@ -10,7 +11,7 @@ header {
   position: sticky;
   top: 5px;
   z-index: 1000;
-  background-color: rgba(15, 15, 15, 0.808);
+  background-color: $background-primary-opacity;
   // @include defaultBorder;
   // border-color: #97b8e4;
   // border-width: 0.4rem;
@@ -23,13 +24,14 @@ header {
 .app-title {
   font-size: 2rem;
   font-weight: bold;
-  color: #6d727a;
+  color: $text-primary;
   text-decoration: none;
 }
 
 .app-title:hover {
   font-size: 2.2rem;
   transition: font-size 500ms;
+  color: $accent-blue;
 }
 
 @media screen and (max-width: 864px) {

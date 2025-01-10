@@ -1,0 +1,27 @@
+// Background Colors
+$background-primary: #121212; // Charcoal Grey
+$background-secondary: #242424; // Soft Slate
+$background-primary-opacity: #121212b9;
+$background-tertiary: #1C1E26; // Dark Blue-Grey
+$background-card: #2A2D35; // Muted Navy
+
+// Text Colors
+$text-primary: #E0E0E0; // Off-White
+$text-secondary: #A0A0A0; // Muted Grey
+
+// Accent Colors
+$accent-teal: #1DB954; // Vibrant Teal
+$accent-orange: #FF8C42; // Soft Orange
+$accent-blue: #3A8DFF; // Bright Blue
+
+// Hover States
+$hover-teal: lighten($accent-teal, 10%); // Slightly lighter teal
+$hover-orange: lighten($accent-orange, 10%); // Slightly lighter orange
+$hover-blue: lighten($accent-blue, 10%); // Slightly lighter blue
+
+// Dividers/Outlines
+$divider: #323232; // Dark Grey
+
+// Error Colors
+$error: #D32F2F; // Soft Red
+$error-hover: lighten($error, 10%); // Slightly lighter red
