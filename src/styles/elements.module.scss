@@ -24,12 +24,17 @@
 
 .default-input {
   font-size: 1.5rem;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: $background-secondary;
   border: none;
   border-bottom: 2px solid rgb(75, 74, 74);
-  color: rgb(94, 92, 92);
+  color: $background-primary;
   margin-bottom: 3rem;
   outline: none;
+}
+
+.default-button:active {
+  color: $accent-blue;
+  transition: color 500ms;
 }
 
 .movie-catalog {
