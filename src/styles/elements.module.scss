@@ -15,8 +15,9 @@
 
 .default-button:hover {
   border: 0.2rem solid rgb(136, 134, 134);
-  background-color: rgb(32, 32, 32);
-  transition: background-color 500ms;
+  background-color: $background-secondary;
+  color: $accent-blue;
+  transition: color 500ms;
 }
 
 .default-input {
